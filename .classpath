@@ -2,5 +2,14 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/selenium/selenium-server-standalone-2.53.0.jar"/>
+	<classpathentry kind="lib" path="C:/selenium/selenium-java-2.53.0/selenium-2.53.0/libs/apache-mime4j-0.6.jar"/>
+	<classpathentry kind="lib" path="C:/selenium/selenium-java-2.53.0/selenium-2.53.0/libs/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/selenium/selenium-java-2.53.0/selenium-2.53.0/libs/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/selenium/selenium-java-2.53.0/selenium-2.53.0/libs/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="C:/selenium/selenium-java-2.53.0/selenium-2.53.0/libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/selenium/selenium-java-2.53.0/selenium-2.53.0/libs/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="C:/selenium/selenium-java-2.53.0/selenium-2.53.0/libs/testng-6.9.9.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
