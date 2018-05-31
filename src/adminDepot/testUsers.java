@@ -38,11 +38,18 @@ public class testUsers {
 	
 	@Before
 	public void setUp() throws Exception {
+		//Instantiate browser and navigate to URL
+		System.out.println("****************************");
+		System.out.println("launching Chrome browser....");
+		
 		System.setProperty("webdriver.chrome.driver", strChrDriver);
 		driver = new ChromeDriver();
+		System.out.println("Driver opened browser!");
 		
 		driver.get(strAppUrl);
 		driver.manage().window().maximize();
+		System.out.println("driver is able to navigate URL");
+		Thread.sleep(2000);
 		
 		driver.findElement(By.xpath(strUserLink)).click();
 		

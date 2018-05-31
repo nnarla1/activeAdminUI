@@ -2,6 +2,9 @@ package adminDepot;
 
 import java.util.List;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,45 +21,49 @@ import org.openqa.selenium.support.ui.Select;
  */
 
 public class testUsersFilters {
-	
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
-		/**
-		 * define variables
-		 */
-		String userResults;
-		String emailResults;
-		String datePicker;
-		String strUserValue = "user02";
-		String stremailvalue = "user02@gmail.com";
-		String strChDriver = "C:\\Users\\nnarla\\workspace\\mes_project\\chromedriver.exe";
-		String strAppUrl = "http://ec2-54-174-213-136.compute-1.amazonaws.com:8080/admin";
+	/**
+	* define variables
+	*/
+	WebDriver driver;
 		
-		String strUserLink = "//*[@id='users']/a";
-		String strddlUsername= "//*[@id='q_username_input']/select";
-		String strUsername = "//*[@id='q_username']";
-		String strddlEmail = "//*[@id='q_email_input']/select";
-		String strEmail = "//*[@id='q_email']";
-		String strFilterButton = "//*[@id='new_q']/div[4]/input[1]";
-		String strClearButton = "//*[@id='new_q']/div[4]/a";
+	String userResults;
+	String emailResults;
+	String strUserValue = "user02";
+	String stremailvalue = "user02@gmail.com";
+	String strChDriver = "C:\\Users\\nnarla\\workspace\\mes_project\\chromedriver.exe";
+	String strAppUrl = "http://ec2-54-174-213-136.compute-1.amazonaws.com:8080/admin";
 		
-		//**************************************
-		//Instantiate browser and navigate to URL
-		System.out.println("*******************");
-		System.out.println("launching Chrome browser");
+	String strUserLink = "//*[@id='users']/a";
+	String strddlUsername= "//*[@id='q_username_input']/select";
+	String strUsername = "//*[@id='q_username']";
+	String strddlEmail = "//*[@id='q_email_input']/select";
+	String strEmail = "//*[@id='q_email']";
+	String strFilterButton = "//*[@id='new_q']/div[4]/input[1]";
+	String strClearButton = "//*[@id='new_q']/div[4]/a";
+		
+	@Before
+	public void setUp() throws Exception {
+		//Instantiate browser and navigate to User screen
+		System.out.println("****************************");
+		System.out.println("launching Chrome browser....");
+		
 		System.setProperty("webdriver.chrome.driver", strChDriver);
-		WebDriver driver = new ChromeDriver();
-		System.out.println("opened browser");
-		
+		driver = new ChromeDriver();
+		System.out.println("Driver opened browser!");
+				
 		driver.get(strAppUrl);
 		driver.manage().window().maximize();
-		System.out.println("driver is able to open browser");
+		System.out.println("driver is able to navigate URL");
 		Thread.sleep(2000);
-		
+				
 		driver.findElement(By.xpath(strUserLink)).click();
 		System.out.println("driver is able to click on the User Link");
 		
-		//*****************************************************
+	}
+	
+	@Test
+	public void testFiltersUsername() throws Exception {
+		//************************************************
 		//Filter Username results with given value- 'user02'
 		
 		for(int i=0; i<4; i++){
@@ -82,11 +89,10 @@ public class testUsersFilters {
 			driver.findElement(By.xpath(strClearButton)).click();
 			Thread.sleep(2000);
 			
-			}
+		}//end for loop
 		
-		//*****************************************************
+		//***********************************************************
 		//Filter email results with given value - 'user02@gmail.com'
-			
 		for(int i =0; i<4 ; i++){
 					
 			Select email  =  new Select(driver.findElement(By.xpath(strddlEmail)));
@@ -111,14 +117,14 @@ public class testUsersFilters {
 			driver.findElement(By.xpath(strClearButton)).click();
 			Thread.sleep(2000);
 			
-		//*****************************************************
-		//Filter User results with datepicker 'created_at'Only
 			
-			driver.findElement(By.xpath("//*[@id='q_created_at_gteq_datetime']")).click();
-			driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/table/tbody/tr[1]/td[3]/a"));
-				
-			}
+		}//end for loop
 			
-		}
+	}//end @test
+	
+	@After
+	public void tearDown() throws Exception {
+		driver.close();
+	}//end@After
 
-}
+}//end class
