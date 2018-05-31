@@ -30,7 +30,7 @@ public class testUsersFilters {
 	String emailResults;
 	String strUserValue = "user02";
 	String stremailvalue = "user02@gmail.com";
-	String strChDriver = "C:\\Users\\nnarla\\workspace\\mes_project\\chromedriver.exe";
+	String strChDriver = "C:\\Users\\nnarla\\workspace\\activeAdminUI\\chromedriver.exe";
 	String strAppUrl = "http://ec2-54-174-213-136.compute-1.amazonaws.com:8080/admin";
 		
 	String strUserLink = "//*[@id='users']/a";

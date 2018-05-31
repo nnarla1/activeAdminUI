@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
  * @author Neelima Narla
- * @Date - 05/28/2018
+ * @Date - 05/29/2018
  * @test Create valid user account and validate if User is created successfully!
  * @Framework - Junit 
  */
@@ -25,7 +25,7 @@ public class testUsers {
 	
 	String strOutput;
 	
-	String strChrDriver = "C:\\Users\\nnarla\\workspace\\mes_project\\chromedriver.exe";
+	String strChrDriver = "C:\\Users\\nnarla\\workspace\\activeAdminUI\\chromedriver.exe";
 	String strAppUrl = "http://ec2-54-174-213-136.compute-1.amazonaws.com:8080/admin";
 	String strUserLink = "//*[@id='users']/a";
 	String strNewUserLink = "//*[@id='titlebar_right']/div/span/a";
